@@ -1,5 +1,6 @@
 <?php
 require('../main.php');
-cors();
+header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+header("Access-Control-Allow-*: *");
 echo $_GET['msg'];
 ?>
