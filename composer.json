@@ -1,0 +1,13 @@
+{
+    "name": "harrisonthorne/heartbeat-api",
+    "type": "project",
+    "require": {
+        "php": "^7.3"
+    },
+    "authors": [
+        {
+            "name": "Harrison Thorne",
+            "email": "harrison.thorne@gmail.com"
+        }
+    ]
+}
