@@ -6,7 +6,8 @@ function get_database() {
         $url = getenv('DATABASE_URL');
 
         if( !isset($url) || empty($url) ) {
-            $url = "postgres://postgres:postgres@localhost:5432/public";
+            // local dev db
+            $url = "postgres://postgres:postgres@127.0.0.1:5432/public";
         } 
 
         $opts = parse_url($url);
