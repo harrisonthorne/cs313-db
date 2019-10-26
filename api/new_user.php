@@ -1,7 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Methods: POST');
+header("Access-Control-Allow-Headers: Content-Type");
 
 require('../db.php');
 $db = get_database();
