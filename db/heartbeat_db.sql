@@ -31,3 +31,5 @@ CREATE TABLE IF NOT EXISTS "public.heartbeat" (
     count       int,
     send_date   date
 );
+
+CREATE SEQUENCE IF NOT EXISTS uuid_seq AS int START WITH 1000;
