@@ -20,6 +20,8 @@ $username = $data['username'];
 $password = password_hash($data['password'], PASSWORD_DEFAULT);
 $password = substr($password, 0, 60);
 
+var_dump($password);
+
 $stmt = $db->prepare("INSERT INTO \"public.user\" (id, keycode, username, password) VALUES (nextval('uuid_seq'), :keycode, :username, :password);");
 $stmt->bindValue(':keycode', $keycode);
 $stmt->bindValue(':username', $username);

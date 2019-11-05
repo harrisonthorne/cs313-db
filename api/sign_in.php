@@ -24,6 +24,8 @@ if ($result) {
     $id = $row['id'];
     $keycode = $row['keycode'];
 
+    var_dump($passwordMatch);
+
     if (password_verify($password, $passwordMatch)) {
         $user = new User($id, $keycode);
         echo json_encode($user->expose());
