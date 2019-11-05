@@ -20,6 +20,7 @@ $result = $stmt->execute();
 if ($result) {
     $row = $stmt->fetch();
     $passwordMatch = $row['password'];
+    $passwordMatch = substr($passwordMatch, 0, 60);
     $id = $row['id'];
     $keycode = $row['keycode'];
 
