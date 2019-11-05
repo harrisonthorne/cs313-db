@@ -16,10 +16,13 @@ $keycode = get_random_hex(4);
 // get username and password
 $data = json_decode(file_get_contents('php://input'), true);
 $username = $data['username'];
-$password = password_hash($data['password']);
+$password = password_hash($data['password'], PASSWORD_DEFAULT);
 
-$search_statement = $db->prepare("INSERT INTO \"public.user\" (id, keycode, username, password) VALUES (nextval('uuid_seq'), '$keycode', '$username', '$password');");
-$search_statement->execute();
+$stmt = $db->prepare("INSERT INTO \"public.user\" (id, keycode, username, password) VALUES (nextval('uuid_seq'), :keycode, :username, :password);");
+$stmt->bindValue(':keycode', $keycode);
+$stmt->bindValue(':username', $username);
+$stmt->bindValue(':password', $password);
+$stmt->execute();
 $new_id = $db->lastInsertId();
 
 echo $new_id;

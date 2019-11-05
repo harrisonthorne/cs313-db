@@ -18,7 +18,7 @@ function get_database() {
         $name = ltrim($opts["path"], '/');
 
         $data_base = new PDO("pgsql:host=$host;port=$port;dbname=$name", $user, $pass);
-        $data_base->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $data_base->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     } catch (PDOException $e) {
         echo "There was an error connecting to the database: $e->getMessage()";

@@ -8,7 +8,7 @@ $db = get_database();
 
 $search_statement = $db->prepare('SELECT * FROM "public.user"');
 $search_statement->execute();
-$rows = $search_statement->fetchAll(PDO::FETCH_ASSOC);
+$rows = $search_statement->fetchAll();
 
 echo json_encode($rows);
 ?>
