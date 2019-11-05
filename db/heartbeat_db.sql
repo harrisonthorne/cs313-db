@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS "public.link_request" (
     sender      int   REFERENCES "public.user" (id), -- foreign key (user)
     recipient   int   REFERENCES "public.user" (id), -- foreign key (user)
     status      int,                                 -- enum
-    send_date   date,
+    send_date   date
 
     -- enum status
     -- 0    Waiting
