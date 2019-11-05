@@ -4,20 +4,7 @@ header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: POST');
 header("Access-Control-Allow-Headers: Content-Type");
 
-class User {
-    public $id;
-    public $keycode;
-
-    function __construct($id, $keycode) {
-        $this->id = $id;
-        $this->keycode = $keycode;
-    }
-
-    public function expose() {
-        return get_object_vars($this);
-    }
-}
-
+require('../user.php');
 require('../db.php');
 $db = get_database();
 

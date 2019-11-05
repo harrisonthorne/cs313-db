@@ -4,6 +4,7 @@ header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Allow-Methods: POST');
 header("Access-Control-Allow-Headers: Content-Type");
 
+require('../user.php');
 require('../db.php');
 $db = get_database();
 
@@ -25,5 +26,6 @@ $stmt->bindValue(':password', $password);
 $stmt->execute();
 $new_id = $db->lastInsertId();
 
-echo $new_id;
+$user = new User($new_id, $keycode);
+echo json_encode($user->expose());
 ?>
